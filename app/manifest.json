@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Remove SwitchXCI Banner for Chrome",
+  "description": "Implementing this for fun",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "switchxci_icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Remove Banner"
+  },
+
+  "permissions": ["activeTab", "tabs", "storage", "declarativeContent"],
+  "content_scripts": [
+    {
+      "matches":["https://switch-xci.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
